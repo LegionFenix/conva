@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Конвертер валют</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Подключаем Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <div class="converter">
@@ -17,30 +19,24 @@
       <option value="GBP">GBP (Фунт стерлингов)</option>
       <option value="JPY">JPY (Иена)</option>
       <option value="RUB" selected>RUB (Рубль)</option>
-      <option value="CNY">CNY (Китайский юань)</option>
-      <option value="INR">INR (Индийская рупия)</option>
-      <option value="CAD">CAD (Канадский доллар)</option>
-      <option value="AUD">AUD (Австралийский доллар)</option>
-      <option value="CHF">CHF (Швейцарский франк)</option>
-      <option value="BRL">BRL (Бразильский реал)</option>
     </select>
-    <span>→</span>
+    <button id="swap-btn" title="Поменять валюты местами">↔️</button>
     <select id="to-currency">
-      <option value="USD">USD (Доллар США)</option>
+      <option value="USD" selected>USD (Доллар США)</option>
       <option value="EUR">EUR (Евро)</option>
       <option value="GBP">GBP (Фунт стерлингов)</option>
       <option value="JPY">JPY (Иена)</option>
-      <option value="RUB" selected>RUB (Рубль)</option>
-      <option value="CNY">CNY (Китайский юань)</option>
-      <option value="INR">INR (Индийская рупия)</option>
-      <option value="CAD">CAD (Канадский доллар)</option>
-      <option value="AUD">AUD (Австралийский доллар)</option>
-      <option value="CHF">CHF (Швейцарский франк)</option>
-      <option value="BRL">BRL (Бразильский реал)</option>
+      <option value="RUB">RUB (Рубль)</option>
     </select>
   </div>
   <button id="convert-btn">Конвертировать</button>
   <div id="result"></div>
+
+  <!-- График -->
+  <div class="chart-container">
+    <h2>Динамика курса за 7 дней</h2>
+    <canvas id="currencyChart"></canvas>
+  </div>
 </div>
 <script src="script.js"></script>
 </body>
